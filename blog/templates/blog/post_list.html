@@ -1,17 +1,16 @@
-<html>
-  <head>
-    <title> Rennie's webpage </title>
-  </head>
-  <body>
-    <h1>Rennie's first blog</h1>
+{% extends 'blog/base.html' %}
 
-    {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
-            <h2><a href="">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
-
-  </body>
-</html>
+{% block content %}
+{% for post in posts %}
+  <div class="post">
+    <div class = "content">
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    <div class="footer">
+      <p> Published on {{ post.published_date }}</p>
+      <p> Author: {{post.Author}}</p>
+    </div>
+  </div>
+  {% endfor %}
+  {% endblock %}

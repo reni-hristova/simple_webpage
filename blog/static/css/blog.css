@@ -1,0 +1,57 @@
+h1 {
+  color: 	#76F5DB;
+  text-shadow: #000 1px 1px 1px;
+  font-family: 'Lobster';
+  text-align: center;
+  font-size: 50px;
+}
+
+.page-header {
+    background-color: #FFCA84;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.post {
+    margin-left: 40px;
+}
+
+/*
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+*/
+.post {
+    margin-bottom: 70px;
+}
+
+.content h2{
+    color: 	#53D4BA;
+    font-weight: bold;
+    font-family: 'EB Garamond', serif;
+}
+
+.content p{
+  font-weight: normal;
+  font-size: 15px;
+  text-align: left;
+  color: black;
+  font-family: 'EB Garamond', serif;
+}
+
+.footer p {
+    color: #828282;
+    text-align: left;
+
+}
