@@ -17,8 +17,10 @@
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus-sign"></span></a>
       {% endif %}
       </div>
-
-      <a href="{% url 'post_list' %}"> Blog </a>
-      <a href="{% url 'post_list' %}"> CV page </a>
+      <div class = "content container">
+        <p>Thank you for visiting my website. You can find my blog and CV by clicking on the links below. :)</p>
+        <a href="{% url 'post_list' %}"> <button type="button"> Blog </button></a>
+        <a href="{% url 'post_list' %}"> <button type="button"> CV page </button></a>
+      </div>
   </body>
 </html>
