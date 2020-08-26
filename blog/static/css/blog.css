@@ -16,7 +16,6 @@ h1 {
     margin-left: 40px;
 }
 
-/*
 .save {
     float: right;
 }
@@ -24,7 +23,7 @@ h1 {
 .post-form textarea, .post-form input {
     width: 100%;
 }
-*/
+
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
@@ -36,10 +35,15 @@ h1 {
     margin-bottom: 70px;
 }
 
+.post h2{
+  display: inline-block;
+}
+
 .content h2{
-    color: 	#53D4BA;
-    font-weight: bold;
-    font-family: 'EB Garamond', serif;
+  color: 	#53D4BA;
+  font-weight: bold;
+  font-family: 'EB Garamond', serif;
+  display: inline-block;
 }
 
 .content p{
@@ -53,5 +57,4 @@ h1 {
 .footer p {
     color: #828282;
     text-align: left;
-
 }
