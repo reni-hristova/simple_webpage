@@ -1,0 +1,22 @@
+{% extends 'section.html' %}
+
+{% block content %}
+  <div class="entry">
+    <h2>{{ enty.positionTitle }}</h2>
+    {% if user.is_authenticated %}
+      <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
+    {% endif %}
+
+    <div class = "date">
+      {{enty.start_date}} <p> - </p>
+      {% if entry.end_date %}
+        {{enty.end_date}}
+      {% else %}
+        <p> current </p>
+      {% endif %}
+    </div>
+    <div class="content">
+      <p>{{ entry.text|linebreaksbr }}</p>
+    </div>
+  </div>
+{% endblock %}
