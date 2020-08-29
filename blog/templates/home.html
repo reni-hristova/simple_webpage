@@ -1,50 +1,6 @@
-{% load static %}
-<html>
-  <head>
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css2?family=Merriweather&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css2?family=EB+Garamond&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+{% extends 'base.html' %}
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"> </script>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <title> Rennie's webpage </title>
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'home' %}" > Rennie </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link"href="{% url 'cv' %}">
-                <span class="glyphicon glyphicon-briefcase" aria-hidden = "true"></span>&nbsp;
-                CV
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'post_list' %}">
-                <span class="glyphicon glyphicon-duplicate" aria-hidden = "true"></span>&nbsp;
-                Blog
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-      <div class = "content container">
-        <p>Thank you for visiting my website. Please find links to my CV and the blog I created in the navigation bar. :)</p>
-      </div>
-
-  </body>
-</html>
+  {% block home %}
+    <p> Thank you for visiting my webpage. :)
+      You can use the navigation above to view my CV or see my blog posts.</p>
+  {% endblock %}

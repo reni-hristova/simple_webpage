@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class = "entry">
+    <h3> {{entry.positionTitle}} </h3>
+    {% if user.is_authenticated %}
+      <a class="btn btn-default" href="{% url 'entry_edit' pk=entry.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
+    {% endif %}
+
+    <div class="content">
+      <h4> {{entry.organisaion}} </h4>
+      <div class = "date">
+        <p>
+          {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
+          {% else %} <p> current </p>
+          {% endif %}
+        </p>
+      </div>
+      <p>{{ entry.description|linebreaksbr }}</p>
+    </div>
+  </div>
+{% endblock %}
+
+-----

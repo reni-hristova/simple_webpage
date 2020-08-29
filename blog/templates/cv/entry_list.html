@@ -1,0 +1,21 @@
+{% extends 'cv/cv_static.html' %}
+
+{% block content %}
+{% for entry in entries %}
+    <div class="entry">
+      <div class="content">
+        <h2><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.positionTitle}}</a></h2>
+        <h4> {{entry.organisaion}} </h4>
+        <div class = "date">
+          {{enty.start_date}} <p> - </p>
+          {% if entry.end_date %}
+            {{enty.end_date}}
+          {% else %}
+            <p> current </p>
+          {% endif %}
+        </div>
+        <p>{{ entry.description|linebreaksbr }}</p>
+        </div>
+      </div>
+      {% endfor %}
+{% endblock %}

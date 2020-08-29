@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block cv %}
+  	<div class ="cv-header">
+      <h1 class ="name">Reni Hristova</h1>
+  		<div class ="contactDetails">
+        <ul>
+  				<li>Email: <a href="mailto:rxh794@student.bham.ac.uk" target="_blank">rxh794@student.bham.ac.uk</a></li>
+  				<li>LinkedIn: <a href="https://www.linkedin.com/in/reni-hristova-2b6723160/">Reni Hristova</a></li>
+  				<li>Telephone: (+44)7526043778</li>
+  			</ul>
+  		</div>
+      <section>
+          <div class="sectionTitle">
+            <h4>Personal Profile</h4>
+          </div>
+          <div class="sectionContent">
+            {% block PersonalProfile %}
+            {% endblock %}
+          </div>
+        <div class="clear"></div>
+      </section>
+
+      <section>
+          <div class="sectionTitle">
+            <h4>Education</h4>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <a href="{% url 'entry_new' %}"><span class="glyphicon glyphicon-plus-sign"></span></a>
+            </button>
+
+          </div>
+          <div class="sectionContent">
+  <!--for loop -->
+          {% for entry in entries %}
+              <div class="entry">
+                <div class="content">
+                  <h3><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.positionTitle}}</a></h3>
+                  <h4> {{entry.organisaion}} </h4>
+                  <div class = "date">
+                    <p>
+                      {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
+                      {% else %} <p> current </p>
+                      {% endif %}
+                    </p>
+                  </div>
+                  <p>{{ entry.description|linebreaksbr }}</p>
+                  </div>
+                </div>
+                {% endfor %}
+          </div>
+        <div class="clear"></div>
+      </section>
+
+      <section>
+          <div class="sectionTitle">
+            <h4>Work Experince</h4>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <a href="{% url 'entry_new' %}"><span class="glyphicon glyphicon-plus-sign"></span></a>
+            </button>
+          </div>
+          <div class="sectionContent">
+<!--for loop
+            {% for entry in entries %}
+              <p> Loop start</p>
+              <div class="entry">
+                <div class="content">
+                  <h2><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.positionTitle}}</a></h2>
+                  <h4> {{entry.organisaion}} </h4>
+                  <div class = "date">
+                    <p>
+                      {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
+                      {% else %} <p> current </p>
+                      {% endif %}
+                    </p>
+                  </div>
+                  <p>{{ entry.description|linebreaksbr }}</p>
+                </div>
+              </div>
+          {% endfor %}
+-->
+          </div>
+        <div class="clear"></div>
+      </section>
+{% endblock %}
