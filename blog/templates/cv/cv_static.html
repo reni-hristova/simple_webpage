@@ -11,7 +11,7 @@
   		</div>
       <section>
           <div class="sectionTitle">
-            <h4>Personal Profile</h4>
+            <h2>Personal Profile</h2>
           </div>
           <div class="sectionContent">
             {% block PersonalProfile %}
@@ -65,8 +65,7 @@
                   <h4> {{entry.organisaion}} </h4>
                   <div class = "date">
                     <p>
-                      {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
-                      {% else %} <p> current </p>
+                      {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}} {% else %} <p> current </p>
                       {% endif %}
                     </p>
                   </div>
@@ -83,9 +82,6 @@
       <section>
           <div class="sectionTitle">
             <h2>Achievements</h2>
-            <button type="button" class="btn btn-default" aria-label="Left Align">
-              <a href="{% url 'entry_new' %}"><span class="glyphicon glyphicon-plus-sign"></span></a>
-            </button>
           </div>
           <div class="sectionContent">
             {% for entry in entries %}
@@ -95,11 +91,6 @@
                   <h3><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a></h3>
                   <h4> {{entry.organisaion}} </h4>
                   <div class = "date">
-                    <p>
-                      {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
-                      {% else %} <p> current </p>
-                      {% endif %}
-                    </p>
                   </div>
                   <p>{{ entry.description|linebreaksbr }}</p>
                 </div>

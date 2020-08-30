@@ -1,8 +1,8 @@
 from django.shortcuts   import render
 from django.utils       import timezone
-from .models            import Post, Entry, EducationEntry, PersonalProfile
+from .models            import Post, Entry,PersonalProfile
 from django.shortcuts   import render, get_object_or_404
-from .forms             import PostForm, EntryForm, EducationEntryForm, PersonalProfileForm
+from .forms             import PostForm, EntryForm, PersonalProfileForm
 from django.shortcuts   import redirect
 
 def home(request):
@@ -48,7 +48,7 @@ def post_edit(request, pk):
 
 # CV views
 def cv(request):
-    return render(request, 'cv/cv_static.html')
+    return render(request, 'cv/entry_list.html')
 
 # Entry views
 def entry_list(request):
@@ -83,43 +83,6 @@ def entry_edit(request, pk):
     else:
         form = EntryForm(instance=entry)
     return render(request, 'cv/entry_edit.html', {'form': form})
-
-# Education Entry views
-def educationEntry_list(request):
-    educationEntries = EducationEntry.objects.order_by('end_date')
-    return render(request, 'cv/cv_static.html', {
-        'educationEntries': educationEntries
-    })
-
-def educationEntry_details(request, pk):
-    educationEntry = get_object_or_404(EducationEntry, pk=pk)
-    return render(request, 'cv/educationEntry_details.html', {
-        'educationEntry': educationEntry
-    })
-
-def educationEntry_new(request):
-    if request.method == "POST":
-        form = EducationEntryForm(request.POST)
-        if form.is_valid():
-            educationEntry = form.save(commit=False)
-            educationEntry.save()
-            return redirect('educationEntry_details', pk=educationEntry.pk)
-    else:
-        form = EducationEntryForm()
-    return render(request, 'cv/educationEntry_edit.html', {'form': form})
-
-def educationEntry_edit(request, pk):
-    educationEntry = get_object_or_404(EducationEntry, pk=pk)
-    if request.method == "POST":
-        form = EducationEntryForm(request.POST, instance=educationEntry)
-        if form.is_valid():
-            educationEntry = form.save(commit=False)
-            educationEntry.save()
-            return redirect('educationEntry_details', pk=educationEntry.pk)
-    else:
-        form = EducationEntryForm(instance=educationEntry)
-    return render(request, 'cv/educationEntry_edit.html', {'form': form})
-
 
 # def personalprofile(request):
 #    return render(request, 'personalprofile.html')

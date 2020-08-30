@@ -37,6 +37,13 @@
               </a>
             </li>
           {% endif %}
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'entry_new' %}">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp; New Entry
+              </a>
+            </li>
+          {% endif %}
           </ul>
         </div>
       </div>
@@ -46,9 +53,9 @@
     <div class="content container">
       <div class="row">
         <div class="col-md-8">
-          {% block home %}{% endblock %}
-          {% block content %}{% endblock %}
-          {% block cv %}{% endblock %}
+          {% block content %} {% endblock%}
+          {% block home %} {% endblock %}
+          {% block cv %} {% endblock %}
         </div>
       </div>
     </div>
