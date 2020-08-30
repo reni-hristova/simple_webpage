@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class = "entry">
-    <h3> {{entry.positionTitle}} </h3>
+    <h3> {{entry.title}} </h3>
     {% if user.is_authenticated %}
       <a class="btn btn-default" href="{% url 'entry_edit' pk=entry.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
     {% endif %}

@@ -15,7 +15,17 @@ h1 {
   text-align: left;
   font-size: 40px;
 }
-h1.name {
+
+#name h1{
+  color: #53D4BA;
+	font-size: 2.5em;
+	font-weight: 700;
+	font-family: 'Lobster', Helvetica, Arial, sans-serif;
+	margin-bottom: -6px;
+}
+
+.name {
+  color: #53D4BA;
 	font-size: 2.5em;
 	font-weight: 700;
 	font-family: 'Lobster', Helvetica, Arial, sans-serif;

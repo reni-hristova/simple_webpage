@@ -4,7 +4,7 @@
 {% for entry in entries %}
     <div class="entry">
       <div class="content">
-        <h2><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.positionTitle}}</a></h2>
+        <h2><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a></h2>
         <h4> {{entry.organisaion}} </h4>
         <div class = "date">
           {{enty.start_date}} <p> - </p>

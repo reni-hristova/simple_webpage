@@ -1,14 +1,14 @@
 from django.shortcuts   import render
 from django.utils       import timezone
-from .models            import Post, Entry
+from .models            import Post, Entry, EducationEntry, PersonalProfile
 from django.shortcuts   import render, get_object_or_404
-from .forms             import PostForm, EntryForm
+from .forms             import PostForm, EntryForm, EducationEntryForm, PersonalProfileForm
 from django.shortcuts   import redirect
-# Create your views here.
 
 def home(request):
     return render(request, 'home.html')
 
+# Blog views
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {
@@ -46,9 +46,11 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+# CV views
 def cv(request):
     return render(request, 'cv/cv_static.html')
 
+# Entry views
 def entry_list(request):
     entries = Entry.objects.order_by('start_date')
     return render(request, 'cv/cv_static.html', {
@@ -81,3 +83,56 @@ def entry_edit(request, pk):
     else:
         form = EntryForm(instance=entry)
     return render(request, 'cv/entry_edit.html', {'form': form})
+
+# Education Entry views
+def educationEntry_list(request):
+    educationEntries = EducationEntry.objects.order_by('end_date')
+    return render(request, 'cv/cv_static.html', {
+        'educationEntries': educationEntries
+    })
+
+def educationEntry_details(request, pk):
+    educationEntry = get_object_or_404(EducationEntry, pk=pk)
+    return render(request, 'cv/educationEntry_details.html', {
+        'educationEntry': educationEntry
+    })
+
+def educationEntry_new(request):
+    if request.method == "POST":
+        form = EducationEntryForm(request.POST)
+        if form.is_valid():
+            educationEntry = form.save(commit=False)
+            educationEntry.save()
+            return redirect('educationEntry_details', pk=educationEntry.pk)
+    else:
+        form = EducationEntryForm()
+    return render(request, 'cv/educationEntry_edit.html', {'form': form})
+
+def educationEntry_edit(request, pk):
+    educationEntry = get_object_or_404(EducationEntry, pk=pk)
+    if request.method == "POST":
+        form = EducationEntryForm(request.POST, instance=educationEntry)
+        if form.is_valid():
+            educationEntry = form.save(commit=False)
+            educationEntry.save()
+            return redirect('educationEntry_details', pk=educationEntry.pk)
+    else:
+        form = EducationEntryForm(instance=educationEntry)
+    return render(request, 'cv/educationEntry_edit.html', {'form': form})
+
+
+# def personalprofile(request):
+#    return render(request, 'personalprofile.html')
+#
+# def personalprofile_edit(request):
+#    personalprofile = get_object_or_404(PersonalProfile)
+#    if request.method == "POST":
+#        form = PersonalProfileForm(request.POST, instance=personalprofile)
+#        if form.is_valid():
+#            personalprofile = form.save(commit=False)
+#            personalprofile.last_updated = timezone.now()
+#            personalprofile.save()
+#            return redirect('personalprofile')
+#    else:
+#        form = PersonalProfileForm(instance=personalprofile)
+#    return render(request, 'cv/personalprofile.html', {'form': form})
