@@ -8,11 +8,13 @@
     {% endif %}
 
     <div class="content">
-      <h4> {{entry.organisaion}} </h4>
+      <h4> Awarded by: {{entry.organisation}} </h4>
       <div class = "date">
         <p>
-          {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
-          {% else %} <p> current </p>
+          {% if entry.type != 'achievement' %}
+            {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
+            {% else %} <p> current </p>
+            {% endif %}
           {% endif %}
         </p>
       </div>

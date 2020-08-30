@@ -6,11 +6,16 @@
         {% if user.is_authenticated %}
           <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
         {% endif %}
-        <p>{{ post.text|linebreaksbr }}</p>
+        <div class = "content">
+          <p>{{ post.text|linebreaksbr }}</p>
+        </div>
         {% if post.published_date %}
-            <div class = "date">
-                {{ post.published_date }}
-            </div>
+        <div class="date">
+          <p> Published on {{ post.published_date }}</p>
+        </div>
         {% endif %}
-    </div>
+
+
+
+
 {% endblock %}

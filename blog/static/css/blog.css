@@ -1,78 +1,84 @@
-.navbar-custom .nav-item {
-    text-align: center;
-    vertical-align: center;
-    display: block;
-}
-
-h4{
-  color: #53D4BA;
-  font-family: 'Lobster';
-}
-
-h1 {
-  color: inherit;
-  font-family: 'Lobster';
-  text-align: left;
-  font-size: 40px;
-}
-
-.name {
-  color: #53D4BA;
-	font-size: 2.5em;
+h1.name {
+  color: #7e5143;
 	font-weight: 700;
-	font-family: 'Lobster', Helvetica, Arial, sans-serif;
-	margin-bottom: -6px;
+	font-family: 'Playfair Display', serif;
+  float: right;
+  vertical-align: center;
 }
 
-.page-header {
-    background-color: #FFCA84;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+.contactDetails{
+  list-style-type: none;
+	margin-top: 2px;
+  font-size: 1em;
+  vertical-align: center;
 }
 
-.post {
-    margin-left: 40px;
+.cv-header {
+  float: center;
+  padding: 25px 10px;
+  border-bottom: 2px solid #cf8a05;
+  background: #ededed;
+  width: 80%;
+  margin: auto;
+
+}
+
+section {
+	border-top: 1px solid #dedede;
+	padding: 20px 0 0;
+  display: block;
+}
+
+.sectionTitle h1 {
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+	color: black;
+  text-decoration: underline;
+  text-decoration-color: #cf8a05;
+}
+
+.content p, .sectionContent p{
+  text-align: left;
+  font-size: 15px;
+  font-family: 'EB Garamond';
+}
+
+.post, .cv-body {
+  width: 80%;
+  margin: auto;
+}
+
+.post h2, .content a{
+  text-align: left;
+  font-family: 'EB Garamond';
+  font-weight: bold;
+  color: #7e5143;
+}
+
+.content h3{
+  font-family: 'EB Garamond';
+  font-weight: bold;
+}
+
+.btn-default{
+  float: right;
+  margin: -20px 0px 50px 0px;
 }
 
 .save {
     float: right;
-}
-
-.post-form textarea, .post-form input {
-    width: 100%;
-}
-
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
-
-.post {
+    margin-right: 10%;
     margin-bottom: 70px;
 }
 
-.post h2{
-  display: inline-block;
-}
-
-h2.content {
-  color: 	#53D4BA;
-  font-weight: bold;
-  font-family: 'EB Garamond', serif;
-  display: inline-block;
-}
-
-p.content{
-  font-weight: bold;
-  font-size: 15px;
-  text-align: left;
-  color: black;
-  font-family: 'EB Garamond', serif;
-}
-
-.footer p {
-    color: #828282;
+.post-form textarea, .post-form input, .entry-form textarea, .entry-form input {
+    width: 80%;
     text-align: left;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.date p {
+    color: #828282;
+    text-align: right;
 }

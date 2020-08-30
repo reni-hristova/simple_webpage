@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block cv %}
   	<div class ="cv-header">
-      <h1 class ="name">Reni Hristova</h1>
+      <h1 class ="name"> Reni Hristova </h1>
   		<div class ="contactDetails">
         <ul>
   				<li>Email: <a href="mailto:rxh794@student.bham.ac.uk" target="_blank">rxh794@student.bham.ac.uk</a></li>
@@ -9,34 +9,34 @@
   				<li>Telephone: (+44)7526043778</li>
   			</ul>
   		</div>
+    </div>
+    <div class = "cv-body">
       <section>
           <div class="sectionTitle">
-            <h2>Personal Profile</h2>
+            <h1>Personal Profile</h1>
           </div>
           <div class="sectionContent">
-            {% block PersonalProfile %}
-            {% endblock %}
+            <div class="entry">
+            <p>I am a third year student at the University of Birmingham. I am currently doing a Year in Computer Science (YCS) and I am in the process of transferring to a full-time Computer Science degree. I have developed excellent communication and time-management skills during my experiences as a Student Mentor and my placement at SCVO. I have experience using Java, MySQL, PostGres, UML 2.0 and C++, as well as some HTML and CSS. I am currently looking for a summer internship, which will help me to improve and apply my programming skills in a working context. </p>
+            <div>
           </div>
-        <div class="clear"></div>
       </section>
-
 <!-- Education -->
       <section>
           <div class="sectionTitle">
-            <h2>Education</h2>
+            <h1>Education</h1>
           </div>
           <div class="sectionContent">
               {% for entry in entries %}
                 <div class="entry">
                   {% if entry.type == 'education' %}
                   <div class="content">
-                    <h3><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a></h3>
-                    <h4> {{entry.organisaion}} </h4>
+                    <h3>{{entry.organisation}},
+                      <a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a>
+                     </h3>
                     <div class = "date">
                       <p>
-                        {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}}
-                        {% else %} <p> current </p>
-                        {% endif %}
+                        {{entry.start_date}} - {{entry.end_date}}
                       </p>
                     </div>
                     <p>{{ entry.description|linebreaksbr }}</p>
@@ -45,56 +45,51 @@
                 </div>
             {% endfor %}
           </div>
-        <div class="clear"></div>
       </section>
 
 <!-- Experince -->
       <section>
           <div class="sectionTitle">
-            <h2>Work Experince</h2>
+            <h1>Work Experince</h1>
           </div>
           <div class="sectionContent">
             {% for entry in entries %}
+            <div class="entry">
               {% if entry.type == 'experience' %}
-              <div class="entry">
                 <div class="content">
-                  <h3><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a></h3>
-                  <h4> {{entry.organisaion}} </h4>
+                  <h3>{{entry.organisation}},
+                    <a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a>
+                   </h3>
                   <div class = "date">
                     <p>
-                      {{entry.start_date}} - {% if entry.end_date %} {{entry.end_date}} {% else %} <p> current </p>
-                      {% endif %}
+                      {{entry.start_date}} - {{entry.end_date}}
                     </p>
                   </div>
                   <p>{{ entry.description|linebreaksbr }}</p>
                 </div>
-              </div>
               {% endif %}
           {% endfor %}
+            </div>
           </div>
-        <div class="clear"></div>
       </section>
 
 <!-- Achievements -->
       <section>
           <div class="sectionTitle">
-            <h2>Achievements</h2>
+            <h1>Achievements</h1>
           </div>
           <div class="sectionContent">
             {% for entry in entries %}
               {% if entry.type == 'achievement' %}
               <div class="entry">
                 <div class="content">
-                  <h3><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a></h3>
-                  <h4> {{entry.organisaion}} </h4>
-                  <div class = "date">
-                  </div>
+                  <h3><a href="{% url 'entry_details' pk=entry.pk %}">{{ entry.title}}</a>
+                  Awarded by: {{entry.organisation}} </h3>
                   <p>{{ entry.description|linebreaksbr }}</p>
                 </div>
               </div>
               {% endif %}
           {% endfor %}
           </div>
-        <div class="clear"></div>
       </section>
 {% endblock %}

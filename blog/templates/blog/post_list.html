@@ -7,7 +7,7 @@
       <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
       <p>{{ post.text|linebreaksbr }}</p>
     </div>
-    <div class="footer">
+    <div class="date">
       <p> Published on {{ post.published_date }}</p>
     </div>
   </div>

@@ -10,7 +10,7 @@ def home(request):
 
 # Blog views
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
     return render(request, 'blog/post_list.html', {
         'posts': posts
     })
@@ -52,7 +52,7 @@ def cv(request):
 
 # Entry views
 def entry_list(request):
-    entries = Entry.objects.order_by('start_date')
+    entries = Entry.objects.order_by('start_date').reverse()
     return render(request, 'cv/cv_static.html', {
         'entries': entries
     })
