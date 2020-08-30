@@ -1,8 +1,8 @@
 from django.shortcuts   import render
 from django.utils       import timezone
-from .models            import Post, Entry,PersonalProfile
+from .models            import Post, Entry
 from django.shortcuts   import render, get_object_or_404
-from .forms             import PostForm, EntryForm, PersonalProfileForm
+from .forms             import PostForm, EntryForm
 from django.shortcuts   import redirect
 
 def home(request):
@@ -83,19 +83,3 @@ def entry_edit(request, pk):
     else:
         form = EntryForm(instance=entry)
     return render(request, 'cv/entry_edit.html', {'form': form})
-
-# def personalprofile(request):
-#    return render(request, 'personalprofile.html')
-#
-# def personalprofile_edit(request):
-#    personalprofile = get_object_or_404(PersonalProfile)
-#    if request.method == "POST":
-#        form = PersonalProfileForm(request.POST, instance=personalprofile)
-#        if form.is_valid():
-#            personalprofile = form.save(commit=False)
-#            personalprofile.last_updated = timezone.now()
-#            personalprofile.save()
-#            return redirect('personalprofile')
-#    else:
-#        form = PersonalProfileForm(instance=personalprofile)
-#    return render(request, 'cv/personalprofile.html', {'form': form})

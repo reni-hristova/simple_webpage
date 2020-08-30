@@ -35,14 +35,3 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.title + "at " + self.organisation + "(" + self.type + ")"
-
-class PersonalProfile(models.Model):
-    description  = models.TextField()
-    last_updated = models.DateField(default = timezone.now)
-
-    def publish(self):
-        self.last_updated = timezone.now()
-        self.save()
-
-    def __str__(self):
-        return self.description

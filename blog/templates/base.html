@@ -1,50 +1,62 @@
 {% load static %}
 <html>
   <head>
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css2?family=EB+Garamond&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"> </script>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all_pages.css' %}">
     <title> Rennie's webpage </title>
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-expand-sm navbar-custom">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{% url 'home' %}" > Rennie </a>
+          <div class = "container">
+          <a class="navbar-brand" href="{% url 'home' %}" ><i class="glyphicon glyphicon-home"> </i>   </a>
         </div>
-
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav">
+        </div>
+        <div class="collapse navbar-collapse justify-content-between" id="navbar">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
+              <div class = "navContainer">
               <a id = "navCV" class="nav-link"href="{% url 'entry_list' %}">
                 <span class="glyphicon glyphicon-briefcase"></span>&nbsp; CV
               </a>
+            </div>
             </li>
             <li class="nav-item">
+              <div class = "navContainer">
               <a id = "navBlog" class="nav-link" href="{% url 'post_list' %}">
-                <span class="glyphicon glyphicon-duplicate"></span>&nbsp; Blog
+                <span class="glyphicon glyphicon-paperclip"></span>&nbsp; Blog
               </a>
+            </div>
             </li>
           {% if user.is_authenticated %}
             <li class="nav-item">
+              <div class = "navContainer">
               <a id = "addPost" class="nav-link" href="{% url 'post_new' %}">
                 <span class="glyphicon glyphicon-plus-sign"></span>&nbsp; New Post
               </a>
+            </div>
             </li>
           {% endif %}
           {% if user.is_authenticated %}
             <li class="nav-item">
+              <div class = "navContainer">
               <a id = "addEntry" class="nav-link" href="{% url 'entry_new' %}">
                 <span class="glyphicon glyphicon-plus-sign"></span>&nbsp; New Entry
               </a>
+            </div>
             </li>
           {% endif %}
           </ul>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
       </div>
     </nav>

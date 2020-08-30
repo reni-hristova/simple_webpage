@@ -13,10 +13,6 @@ urlpatterns = [
     path('cv/entry/<int:pk>/', views.entry_details, name='entry_details'),
     path('cv/entry/<int:pk>/edit/', views.entry_edit, name='entry_edit'),
     path('cv/', views.entry_list, name='entry_list'),
-#    path('cv/personalprofile/', views.personalprofile, name = 'personalprofile'),
-#    path('cv/personalprofile/edit', views.personalprofile_edit, name = 'personalprofile_edit'),
-
-
 ]
 
 #<int:pk> – integer expected that will transfer to a view as a variable called pk (primary key)
