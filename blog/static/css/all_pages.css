@@ -27,6 +27,41 @@
   vertical-align: center;
 }
 
+h1.welcome{
+  color: white;
+	font-family: 'Playfair Display', serif;
+  font-size: 4em;
+  font-style: italic;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  text-shadow: 2px 2px #000000;
+}
+
+p.welcome{
+  color: white;
+  text-align: center;
+  display: block;
+  margin-top: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px #000000;
+}
+
+img{
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  margin-top: 0px;
+  display: inline;
+}
+
 h1.name {
   color: #7e5143;
 	font-weight: 700;

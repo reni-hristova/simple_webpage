@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
   {% block home %}
-    <p> Thank you for visiting my webpage. :)
-      You can use the navigation above to view my CV or see my blog posts.</p>
+  {% load staticfiles %}
+  <div class = "welcome">
+    <h1 class ="welcome"> Welcome </h1>
+    <p class = "welcome"> Thank you for visiting my webpage. :)
+        You can use the navigation above to view my CV or see my blog posts.</p>
+    <img src='{% static "images\background.jpg" %}' alt="background-Birmingham-Botanical-Gardens" style="width:100%;"/>
+  </div>
+
   {% endblock %}
