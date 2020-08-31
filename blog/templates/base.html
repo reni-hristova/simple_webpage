@@ -19,6 +19,13 @@
         </div>
         <div class="collapse navbar-collapse justify-content-between" id="navbar">
           <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <div class = "navContainer">
+                  <p>Hello {{ user.username }}</p>
+              </div>
+              </li>
+            {% endif %}
             <li class="nav-item">
               <div class = "navContainer">
               <a id = "navCV" class="nav-link"href="{% url 'entry_list' %}">
@@ -50,6 +57,23 @@
               </a>
             </div>
             </li>
+          {% endif %}
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <div class = "navContainer">
+              <a id = "addEntry" class="nav-link" href="{% url 'logout' %}">
+                <span class="glyphicon glyphicon-lock"></span>&nbsp; Logout
+              </a>
+            </div>
+            </li>
+          {% else %}
+          <li class="nav-item">
+            <div class = "navContainer">
+            <a id = "addEntry" class="nav-link" href="{% url 'login' %}" >
+              <span class="glyphicon glyphicon-lock"></span>&nbsp; Login
+            </a>
+          </div>
+          </li>
           {% endif %}
           </ul>
         </div>

@@ -21,7 +21,6 @@
   padding: 7px 10px 0px 10px;
 }
 
-
 h1.welcome{
   color: white;
 	font-family: 'Playfair Display', serif;
@@ -52,6 +51,31 @@ img{
   max-width: 100%;
   margin-top: 0px;
   display: inline;
+}
+
+h1 {
+  color: #7e5143;
+	font-family: 'Playfair Display', serif;
+  text-align: left;
+  width: 50%;
+  min-width: 250px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.login-form table{
+  width: 50%;
+  min-width: 250px;
+  margin: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.login-button{
+  width: 10%;
+  min-width: 70px;
+  display: block;
+  margin-left: 40%;
 }
 
 h1.name {
@@ -120,7 +144,7 @@ section {
   margin: -20px 0px 50px 0px;
 }
 
-.save {
+.save{
     float: right;
     margin: 20px 50px 70px 0px;
     padding: 5px 20px;

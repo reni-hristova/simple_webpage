@@ -1,9 +1,10 @@
-from django.shortcuts   import render
-from django.utils       import timezone
-from .models            import Post, Entry
-from django.shortcuts   import render, get_object_or_404
-from .forms             import PostForm, EntryForm
-from django.shortcuts   import redirect
+from django.shortcuts               import render
+from django.utils                   import timezone
+from .models                        import Post, Entry
+from django.shortcuts               import render, get_object_or_404
+from .forms                         import PostForm, EntryForm
+from django.shortcuts               import redirect
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request, 'home.html')
@@ -19,6 +20,7 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
+@login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -32,6 +34,7 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -61,6 +64,7 @@ def entry_details(request, pk):
     entry = get_object_or_404(Entry, pk=pk)
     return render(request, 'cv/entry_details.html', {'entry': entry})
 
+@login_required
 def entry_new(request):
     if request.method == "POST":
         form = EntryForm(request.POST)
@@ -72,6 +76,7 @@ def entry_new(request):
         form = EntryForm()
     return render(request, 'cv/entry_edit.html', {'form': form})
 
+@login_required
 def entry_edit(request, pk):
     entry = get_object_or_404(Entry, pk=pk)
     if request.method == "POST":
