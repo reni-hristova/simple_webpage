@@ -1,9 +1,10 @@
 .navbar-custom .navbar-brand {
   color: #edb3a1;
   font-family: 'Playfair Display';
-  text-align: center;
-  vertical-align: center;
-    display: inline;
+}
+
+.navbar-custom .navbar-header{
+  width: 70px;
 }
 
 .navbar-custom .navbar-nav .nav-link {
@@ -12,39 +13,29 @@
 }
 
 .navbar-custom .navbar-nav {
-  display: inline;
   float: right;
 }
 
 .navbar-custom .navbar-nav .nav-item {
-  display: inline;
-  margin: -10px 10px 20px 10px;
-  padding: -10px 10px 20px 10px;
+  margin: 7px 10px 0px 10px;
+  padding: 7px 10px 0px 10px;
 }
 
-.navContainer{
-  display: inline;
-  vertical-align: center;
-}
 
 h1.welcome{
   color: white;
 	font-family: 'Playfair Display', serif;
   font-size: 4em;
   font-style: italic;
-  text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: block;
   text-shadow: 2px 2px #000000;
 }
 
 p.welcome{
   color: white;
-  text-align: center;
-  display: block;
   margin-top: 100px;
   position: fixed;
   top: 50%;
@@ -58,6 +49,7 @@ img{
   height: auto;
   width: auto;
   max-height: 100%;
+  max-width: 100%;
   margin-top: 0px;
   display: inline;
 }
@@ -144,4 +136,7 @@ section {
 .date p {
     color: #828282;
     text-align: right;
+}
+.space{
+  padding: 40px;
 }
