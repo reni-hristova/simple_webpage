@@ -53,7 +53,7 @@ img{
   display: inline;
 }
 
-h1 {
+.login-form h1 {
   color: #7e5143;
 	font-family: 'Playfair Display', serif;
   text-align: left;
