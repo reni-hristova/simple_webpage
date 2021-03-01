@@ -1,6 +1,6 @@
 .navbar-custom .navbar-brand {
   color: #edb3a1;
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display', serif;
 }
 
 .navbar-custom .navbar-header{
@@ -9,7 +9,7 @@
 
 .navbar-custom .navbar-nav .nav-link {
     color: #edb3a1;
-    font-family: 'EB Garamond';
+    font-family: 'EB Garamond', monospace;
 }
 
 .navbar-custom .navbar-nav {
@@ -119,7 +119,7 @@ section {
 .content p, .sectionContent p{
   text-align: left;
   font-size: 15px;
-  font-family: 'EB Garamond';
+  font-family: 'EB Garamond', monospace;
 }
 
 .post, .cv-body {
@@ -129,13 +129,13 @@ section {
 
 .post h2, .content a{
   text-align: left;
-  font-family: 'EB Garamond';
+  font-family: 'EB Garamond', monospace;
   font-weight: bold;
   color: #7e5143;
 }
 
 .content h3{
-  font-family: 'EB Garamond';
+  font-family: 'EB Garamond', monospace;
   font-weight: bold;
 }
 

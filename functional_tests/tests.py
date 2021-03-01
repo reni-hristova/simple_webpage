@@ -5,7 +5,7 @@ from    django.test                     import LiveServerTestCase, TestCase, Cli
 import  unittest
 import  time
 
-HOMEPAGE = 'http://127.0.0.1:8000/'
+HOMEPAGE = 'http://rennie.pythonanywhere.com/'
 
 class VisitorTest(unittest.TestCase):
 
